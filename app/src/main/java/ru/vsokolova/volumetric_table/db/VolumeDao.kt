@@ -6,17 +6,15 @@ import androidx.room.Query
 
 @Dao
 interface VolumeDao {
-//    @Insert
-//    fun insertAll(volumeList: List<Volume>)
 
     @Query("SELECT value FROM volumetric_table WHERE length = :length AND thick = :thick AND top = :top")
     fun getVolumeValue(length: String, thick: String, top: Short): String
 
-    @Query("SELECT length FROM volumetric_table WHERE length LIKE '%' || :startWith || '%' AND top = :top")
+    @Query("SELECT DISTINCT length FROM volumetric_table WHERE length LIKE '%' || :startWith || '%' AND top = :top")
     fun getLengthsList(startWith: String, top: Short): List<String>
 
-//    @Query("SELECT * FROM volumetric_table")
-//    fun getAll()
+    @Query("SELECT DISTINCT thick FROM volumetric_table WHERE thick LIKE '%' || :startWith || '%' AND length = :length AND top = :top")
+    fun getThickList(startWith: String, length: String, top: Short): List<String>
 
 //    @Query("SELECT length FROM volumetric_table WHERE length LIKE :startWith AND top = :")
 //    fun getLength(startWith: String): Cursor

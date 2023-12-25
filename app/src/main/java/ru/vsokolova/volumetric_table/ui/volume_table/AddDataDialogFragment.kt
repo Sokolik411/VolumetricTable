@@ -6,16 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.DialogFragment
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
+import ru.vsokolova.volumetric_table.Dependencies
 import ru.vsokolova.volumetric_table.databinding.DialogVolumeTableDataBinding
-import ru.vsokolova.volumetric_table.db.VolumeDatabase
 
 
 class AddDataDialogFragment : DialogFragment() {
 
     private var _binding: DialogVolumeTableDataBinding? = null
     private val binding get() = _binding!!
+    private val viewModel by lazy { AddDataDialogViewModel(Dependencies.volumeRepository) }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,22 +28,37 @@ class AddDataDialogFragment : DialogFragment() {
         val root: View = binding.root
 
 
-        val isTop = if (binding.checkboxTrunkApex.isChecked) {
-            1.toShort()
-        } else {
-            0.toShort()
-        }
+        val checkboxTrunkApex = binding.checkboxTrunkApex
 
         val textViewLength: MaterialAutoCompleteTextView = binding.textViewLength
-        val lengthArray = VolumeDatabase.getDatabase(requireContext()).getVolumeDao().getLengthsList(
-            "2",
-            isTop
-        )
-//        val test = VolumeDatabase.getDatabase(requireContext()).getVolumeDao().getAll()
-//        val woodAdapter = ArrayAdapter(requireContext(), R.layout.simple_list_item_1, lengthArray)
-//        textViewLength.setAdapter(woodAdapter)
+        textViewLength.addTextChangedListener {
+            viewModel.getLengths(it.toString(), checkboxTrunkApex.isChecked)
+        }
 
-//        textViewLength.setOn
+        viewModel.lengths.observe(
+            this
+        ) { lengthArray ->
+            val adapter = ArrayAdapter(requireContext(), R.layout.simple_list_item_1, lengthArray.orEmpty())
+            adapter.filter.filter(textViewLength.text.toString())
+            textViewLength.setAdapter(adapter)
+        }
+
+        val textViewThick: MaterialAutoCompleteTextView = binding.textViewThick
+        textViewThick.addTextChangedListener {
+            viewModel.getThicks(it.toString(), textViewLength.text.toString(), checkboxTrunkApex.isChecked)
+        }
+
+        viewModel.thicks.observe(this) { thickArray ->
+            val adapter = ArrayAdapter(requireContext(), R.layout.simple_list_item_1, thickArray.orEmpty())
+            adapter.filter.filter(textViewThick.text.toString())
+            textViewThick.setAdapter(adapter)
+        }
+
+        binding.buttonAdd.setOnClickListener{
+            val volume = viewModel.getVolume(textViewLength.text.toString(), textViewThick.text.toString(), checkboxTrunkApex.isChecked)
+            println("vera-test $volume")
+        }
+
 
 //        val spinnerWoodType: MaterialAutoCompleteTextView = binding.spinnerWoodType
 //        val woodTypes = resources.getStringArray(R.array.woodTypes)
@@ -54,7 +71,6 @@ class AddDataDialogFragment : DialogFragment() {
 //        val humidityAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, humidityValues)
 //        spinnerHumidity.setText(humidityAdapter.getItem(0))
 //        spinnerHumidity.setAdapter(humidityAdapter)
-
 
 
 //        densityViewModel.text.observe(viewLifecycleOwner) {

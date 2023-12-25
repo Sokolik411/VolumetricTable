@@ -1,21 +1,25 @@
 package ru.vsokolova.volumetric_table.db
 
-import android.app.Application
-import androidx.lifecycle.LiveData
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
+class VolumeRepository(private val volumeDao: VolumeDao) {
 
-class VolumeRepository {
-    private var volumeDao: VolumeDao? = null
-    private var volumeLiveData: LiveData<List<Volume?>?>? = null
+    suspend fun getAllLength(startWith: String, top: Short): List<String> {
+        return withContext(Dispatchers.IO){
+            return@withContext volumeDao.getLengthsList(startWith, top)
+        }
+    }
 
-//    fun VolumeRepository(application: Application?) {
-//        val db: VolumeDatabase = VolumeDatabase.getDatabase(application)
-//        volumeDao = db.getVolumeDao()
-//
-////        volumeLiveData = volumeDao.get
-//    }
-//
-//    fun getVolumeLiveData(): LiveData<List<Volume?>?>? {
-//        return volumeLiveData
-//    }
+    suspend fun getAllThick(startWith: String, length: String, top: Short): List<String> {
+        return withContext(Dispatchers.IO){
+            return@withContext volumeDao.getThickList(startWith, length, top)
+        }
+    }
+
+    suspend fun getVolume(length: String, thick: String, top: Short): String {
+        return withContext(Dispatchers.IO){
+            return@withContext volumeDao.getVolumeValue(length, thick, top)
+        }
+    }
 }
