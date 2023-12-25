@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">VolumetricTable</string>
+    <string name="title_volumetric_table">Кубатурник</string>
+    <string name="title_density">Плотность</string>
+    <string name="title_gost">Гост</string>
+
+    <string name="title_trunk_apex">Вершинная часть ствола</string>
+    <string name="title_wood_type">Порода дерева</string>
+    <string name="title_moisture">Влажность, %</string>
+    <string name="title_length">Длина, м</string>
+    <string name="title_diameter">Диаметр, см</string>
+    <string name="title_amount">Количество, шт</string>
+
+    <string name="action_add">Добавить</string>
+</resources>

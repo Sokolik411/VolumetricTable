@@ -1,0 +1,1048 @@
+<?xml version="1.0" encoding="utf-8"?>
+<density>
+
+    <record
+        wood="0"
+        humidity="0"
+        density="940" />
+
+    <record
+        wood="0"
+        humidity="1"
+        density="670" />
+
+    <record
+        wood="0"
+        humidity="2"
+        density="690" />
+
+    <record
+        wood="0"
+        humidity="3"
+        density="700" />
+
+    <record
+        wood="0"
+        humidity="4"
+        density="710" />
+
+    <record
+        wood="0"
+        humidity="5"
+        density="770" />
+
+    <record
+        wood="0"
+        humidity="6"
+        density="820" />
+
+    <record
+        wood="0"
+        humidity="7"
+        density="880" />
+
+    <record
+        wood="0"
+        humidity="8"
+        density="930" />
+
+    <record
+        wood="0"
+        humidity="9"
+        density="990" />
+
+    <record
+        wood="0"
+        humidity="10"
+        density="1100" />
+
+    <record
+        wood="1"
+        humidity="0"
+        density="700" />
+
+    <record
+        wood="1"
+        humidity="1"
+        density="460" />
+
+    <record
+        wood="1"
+        humidity="2"
+        density="470" />
+
+    <record
+        wood="1"
+        humidity="3"
+        density="480" />
+
+    <record
+        wood="1"
+        humidity="4"
+        density="500" />
+
+    <record
+        wood="1"
+        humidity="5"
+        density="540" />
+
+    <record
+        wood="1"
+        humidity="6"
+        density="570" />
+
+    <record
+        wood="1"
+        humidity="7"
+        density="610" />
+
+    <record
+        wood="1"
+        humidity="8"
+        density="650" />
+
+    <record
+        wood="1"
+        humidity="9"
+        density="690" />
+
+    <record
+        wood="1"
+        humidity="10"
+        density="760" />
+
+    <record
+        wood="2"
+        humidity="0"
+        density="960" />
+
+    <record
+        wood="2"
+        humidity="1"
+        density="680" />
+
+    <record
+        wood="2"
+        humidity="2"
+        density="690" />
+
+    <record
+        wood="2"
+        humidity="3"
+        density="710" />
+
+    <record
+        wood="2"
+        humidity="4"
+        density="720" />
+
+    <record
+        wood="2"
+        humidity="5"
+        density="780" />
+
+    <record
+        wood="2"
+        humidity="6"
+        density="830" />
+
+    <record
+        wood="2"
+        humidity="7"
+        density="890" />
+
+    <record
+        wood="2"
+        humidity="8"
+        density="950" />
+
+    <record
+        wood="2"
+        humidity="9"
+        density="1000" />
+
+    <record
+        wood="2"
+        humidity="10"
+        density="1110" />
+
+    <record
+        wood="3"
+        humidity="0"
+        density="940" />
+
+    <record
+        wood="3"
+        humidity="1"
+        density="660" />
+
+    <record
+        wood="3"
+        humidity="2"
+        density="680" />
+
+    <record
+        wood="3"
+        humidity="3"
+        density="690" />
+
+    <record
+        wood="3"
+        humidity="4"
+        density="710" />
+
+    <record
+        wood="3"
+        humidity="5"
+        density="770" />
+
+    <record
+        wood="3"
+        humidity="6"
+        density="820" />
+
+    <record
+        wood="3"
+        humidity="7"
+        density="880" />
+
+    <record
+        wood="3"
+        humidity="8"
+        density="930" />
+
+    <record
+        wood="3"
+        humidity="9"
+        density="990" />
+
+    <record
+        wood="3"
+        humidity="10"
+        density="1100" />
+
+    <record
+        wood="4"
+        humidity="0"
+        density="990" />
+
+    <record
+        wood="4"
+        humidity="1"
+        density="700" />
+
+    <record
+        wood="4"
+        humidity="2"
+        density="720" />
+
+    <record
+        wood="4"
+        humidity="3"
+        density="740" />
+
+    <record
+        wood="4"
+        humidity="4"
+        density="760" />
+
+    <record
+        wood="4"
+        humidity="5"
+        density="820" />
+
+    <record
+        wood="4"
+        humidity="6"
+        density="870" />
+
+    <record
+        wood="4"
+        humidity="7"
+        density="930" />
+
+    <record
+        wood="4"
+        humidity="8"
+        density="990" />
+
+    <record
+        wood="4"
+        humidity="9"
+        density="1050" />
+
+    <record
+        wood="4"
+        humidity="10"
+        density="1160" />
+
+    <record
+        wood="5"
+        humidity="0"
+        density="1060" />
+
+    <record
+        wood="5"
+        humidity="1"
+        density="810" />
+
+    <record
+        wood="5"
+        humidity="2"
+        density="830" />
+
+    <record
+        wood="5"
+        humidity="3"
+        density="840" />
+
+    <record
+        wood="5"
+        humidity="4"
+        density="860" />
+
+    <record
+        wood="5"
+        humidity="5"
+        density="930" />
+
+    <record
+        wood="5"
+        humidity="6"
+        density="990" />
+
+    <record
+        wood="5"
+        humidity="7"
+        density="1060" />
+
+    <record
+        wood="5"
+        humidity="8"
+        density="1130" />
+
+    <record
+        wood="5"
+        humidity="9"
+        density="1190" />
+
+    <record
+        wood="5"
+        humidity="10"
+        density="1330" />
+
+    <record
+        wood="6"
+        humidity="0"
+        density="740" />
+
+    <record
+        wood="6"
+        humidity="1"
+        density="450" />
+
+    <record
+        wood="6"
+        humidity="2"
+        density="460" />
+
+    <record
+        wood="6"
+        humidity="3"
+        density="470" />
+
+    <record
+        wood="6"
+        humidity="4"
+        density="490" />
+
+    <record
+        wood="6"
+        humidity="5"
+        density="520" />
+
+    <record
+        wood="6"
+        humidity="6"
+        density="560" />
+
+    <record
+        wood="6"
+        humidity="7"
+        density="600" />
+
+    <record
+        wood="6"
+        humidity="8"
+        density="640" />
+
+    <record
+        wood="6"
+        humidity="9"
+        density="670" />
+
+    <record
+        wood="6"
+        humidity="10"
+        density="750" />
+
+    <record
+        wood="7"
+        humidity="0"
+        density="910" />
+
+    <record
+        wood="7"
+        humidity="1"
+        density="600" />
+
+    <record
+        wood="7"
+        humidity="2"
+        density="610" />
+
+    <record
+        wood="7"
+        humidity="3"
+        density="630" />
+
+    <record
+        wood="7"
+        humidity="4"
+        density="650" />
+
+    <record
+        wood="7"
+        humidity="5"
+        density="700" />
+
+    <record
+        wood="7"
+        humidity="6"
+        density="750" />
+
+    <record
+        wood="7"
+        humidity="7"
+        density="800" />
+
+    <record
+        wood="7"
+        humidity="8"
+        density="850" />
+
+    <record
+        wood="7"
+        humidity="9"
+        density="900" />
+
+    <record
+        wood="7"
+        humidity="10"
+        density="1000" />
+
+    <record
+        wood="8"
+        humidity="0"
+        density="760" />
+
+    <record
+        wood="8"
+        humidity="1"
+        density="500" />
+
+    <record
+        wood="8"
+        humidity="2"
+        density="530" />
+
+    <record
+        wood="8"
+        humidity="3"
+        density="540" />
+
+    <record
+        wood="8"
+        humidity="4"
+        density="540" />
+
+    <record
+        wood="8"
+        humidity="5"
+        density="580" />
+
+    <record
+        wood="8"
+        humidity="6"
+        density="620" />
+
+    <record
+        wood="8"
+        humidity="7"
+        density="660" />
+
+    <record
+        wood="8"
+        humidity="8"
+        density="710" />
+
+    <record
+        wood="8"
+        humidity="9"
+        density="750" />
+
+    <record
+        wood="8"
+        humidity="10"
+        density="830" />
+
+    <record
+        wood="9"
+        humidity="0"
+        density="1030" />
+
+    <record
+        wood="9"
+        humidity="1"
+        density="810" />
+
+    <record
+        wood="9"
+        humidity="2"
+        density="830" />
+
+    <record
+        wood="9"
+        humidity="3"
+        density="840" />
+
+    <record
+        wood="9"
+        humidity="4"
+        density="860" />
+
+    <record
+        wood="9"
+        humidity="5"
+        density="930" />
+
+    <record
+        wood="9"
+        humidity="6"
+        density="990" />
+
+    <record
+        wood="9"
+        humidity="7"
+        density="1060" />
+
+    <record
+        wood="9"
+        humidity="8"
+        density="1190" />
+
+    <record
+        wood="9"
+        humidity="9"
+        density="1300" />
+
+    <record
+        wood="9"
+        humidity="10"
+        density="1330" />
+
+    <record
+        wood="10"
+        humidity="0"
+        density="810" />
+
+    <record
+        wood="10"
+        humidity="1"
+        density="530" />
+
+    <record
+        wood="10"
+        humidity="2"
+        density="540" />
+
+    <record
+        wood="10"
+        humidity="3"
+        density="560" />
+
+    <record
+        wood="10"
+        humidity="4"
+        density="570" />
+
+    <record
+        wood="10"
+        humidity="5"
+        density="620" />
+
+    <record
+        wood="10"
+        humidity="6"
+        density="660" />
+
+    <record
+        wood="10"
+        humidity="7"
+        density="700" />
+
+    <record
+        wood="10"
+        humidity="8"
+        density="750" />
+
+    <record
+        wood="10"
+        humidity="9"
+        density="790" />
+
+    <record
+        wood="10"
+        humidity="10"
+        density="880" />
+
+    <record
+        wood="11"
+        humidity="0"
+        density="870" />
+
+    <record
+        wood="11"
+        humidity="1"
+        density="700" />
+
+    <record
+        wood="11"
+        humidity="2"
+        density="720" />
+
+    <record
+        wood="11"
+        humidity="3"
+        density="740" />
+
+    <record
+        wood="11"
+        humidity="4"
+        density="760" />
+
+    <record
+        wood="11"
+        humidity="5"
+        density="820" />
+
+    <record
+        wood="11"
+        humidity="6"
+        density="870" />
+
+    <record
+        wood="11"
+        humidity="7"
+        density="930" />
+
+    <record
+        wood="11"
+        humidity="8"
+        density="990" />
+
+    <record
+        wood="11"
+        humidity="9"
+        density="1050" />
+
+    <record
+        wood="11"
+        humidity="10"
+        density="1160" />
+
+    <record
+        wood="12"
+        humidity="0"
+        density="960" />
+
+    <record
+        wood="12"
+        humidity="1"
+        density="690" />
+
+    <record
+        wood="12"
+        humidity="2"
+        density="710" />
+
+    <record
+        wood="12"
+        humidity="3"
+        density="730" />
+
+    <record
+        wood="12"
+        humidity="4"
+        density="740" />
+
+    <record
+        wood="12"
+        humidity="5"
+        density="800" />
+
+    <record
+        wood="12"
+        humidity="6"
+        density="860" />
+
+    <record
+        wood="12"
+        humidity="7"
+        density="920" />
+
+    <record
+        wood="12"
+        humidity="8"
+        density="930" />
+
+    <record
+        wood="12"
+        humidity="9"
+        density="1030" />
+
+    <record
+        wood="12"
+        humidity="10"
+        density="1150" />
+
+    <record
+        wood="13"
+        humidity="0"
+        density="680" />
+
+    <record
+        wood="13"
+        humidity="1"
+        density="380" />
+
+    <record
+        wood="13"
+        humidity="2"
+        density="390" />
+
+    <record
+        wood="13"
+        humidity="3"
+        density="400" />
+
+    <record
+        wood="13"
+        humidity="4"
+        density="410" />
+
+    <record
+        wood="13"
+        humidity="5"
+        density="440" />
+
+    <record
+        wood="13"
+        humidity="6"
+        density="470" />
+
+    <record
+        wood="13"
+        humidity="7"
+        density="510" />
+
+    <record
+        wood="13"
+        humidity="8"
+        density="540" />
+
+    <record
+        wood="13"
+        humidity="9"
+        density="570" />
+
+    <record
+        wood="13"
+        humidity="10"
+        density="630" />
+
+    <record
+        wood="14"
+        humidity="0"
+        density="820" />
+
+    <record
+        wood="14"
+        humidity="1"
+        density="510" />
+
+    <record
+        wood="14"
+        humidity="2"
+        density="520" />
+
+    <record
+        wood="14"
+        humidity="3"
+        density="540" />
+
+    <record
+        wood="14"
+        humidity="4"
+        density="550" />
+
+    <record
+        wood="14"
+        humidity="5"
+        density="590" />
+
+    <record
+        wood="14"
+        humidity="6"
+        density="640" />
+
+    <record
+        wood="14"
+        humidity="7"
+        density="680" />
+
+    <record
+        wood="14"
+        humidity="8"
+        density="720" />
+
+    <record
+        wood="14"
+        humidity="9"
+        density="760" />
+
+    <record
+        wood="14"
+        humidity="10"
+        density="850" />
+
+    <record
+        wood="15"
+        humidity="0"
+        density="720" />
+
+    <record
+        wood="15"
+        humidity="1"
+        density="440" />
+
+    <record
+        wood="15"
+        humidity="2"
+        density="450" />
+
+    <record
+        wood="15"
+        humidity="3"
+        density="460" />
+
+    <record
+        wood="15"
+        humidity="4"
+        density="480" />
+
+    <record
+        wood="15"
+        humidity="5"
+        density="510" />
+
+    <record
+        wood="15"
+        humidity="6"
+        density="550" />
+
+    <record
+        wood="15"
+        humidity="7"
+        density="580" />
+
+    <record
+        wood="15"
+        humidity="8"
+        density="620" />
+
+    <record
+        wood="15"
+        humidity="9"
+        density="660" />
+
+    <record
+        wood="15"
+        humidity="10"
+        density="730" />
+
+    <record
+        wood="16"
+        humidity="0"
+        density="760" />
+
+    <record
+        wood="16"
+        humidity="1"
+        density="440" />
+
+    <record
+        wood="16"
+        humidity="2"
+        density="450" />
+
+    <record
+        wood="16"
+        humidity="3"
+        density="460" />
+
+    <record
+        wood="16"
+        humidity="4"
+        density="480" />
+
+    <record
+        wood="16"
+        humidity="5"
+        density="510" />
+
+    <record
+        wood="16"
+        humidity="6"
+        density="550" />
+
+    <record
+        wood="16"
+        humidity="7"
+        density="580" />
+
+    <record
+        wood="16"
+        humidity="8"
+        density="620" />
+
+    <record
+        wood="16"
+        humidity="9"
+        density="660" />
+
+    <record
+        wood="16"
+        humidity="10"
+        density="730" />
+
+    <record
+        wood="17"
+        humidity="0"
+        density="870" />
+
+    <record
+        wood="17"
+        humidity="1"
+        density="640" />
+
+    <record
+        wood="17"
+        humidity="2"
+        density="650" />
+
+    <record
+        wood="17"
+        humidity="3"
+        density="670" />
+
+    <record
+        wood="17"
+        humidity="4"
+        density="680" />
+
+    <record
+        wood="17"
+        humidity="5"
+        density="730" />
+
+    <record
+        wood="17"
+        humidity="6"
+        density="790" />
+
+    <record
+        wood="17"
+        humidity="7"
+        density="840" />
+
+    <record
+        wood="17"
+        humidity="8"
+        density="890" />
+
+    <record
+        wood="17"
+        humidity="9"
+        density="940" />
+
+    <record
+        wood="17"
+        humidity="10"
+        density="1050" />
+
+    <record
+        wood="18"
+        humidity="0"
+        density="760" />
+
+    <record
+        wood="18"
+        humidity="1"
+        density="500" />
+
+    <record
+        wood="18"
+        humidity="2"
+        density="510" />
+
+    <record
+        wood="18"
+        humidity="3"
+        density="530" />
+
+    <record
+        wood="18"
+        humidity="4"
+        density="540" />
+
+    <record
+        wood="18"
+        humidity="5"
+        density="580" />
+
+    <record
+        wood="18"
+        humidity="6"
+        density="620" />
+
+    <record
+        wood="18"
+        humidity="7"
+        density="660" />
+
+    <record
+        wood="18"
+        humidity="8"
+        density="710" />
+
+    <record
+        wood="18"
+        humidity="9"
+        density="750" />
+
+    <record
+        wood="18"
+        humidity="10"
+        density="830" />
+</density>

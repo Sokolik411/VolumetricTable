@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="humidityValues">
+        <item>Свеж.</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+        <item>60</item>
+        <item>70</item>
+        <item>80</item>
+        <item>100</item>
+    </string-array>
+    <string-array name="woodTypes">
+        <item>Лиственница</item>
+        <item>Тополь</item>
+        <item>Бук</item>
+        <item>Вяз</item>
+        <item>Дуб</item>
+        <item>Граб</item>
+        <item>Ель обыкновенная</item>
+        <item>Орех грецкий</item>
+        <item>Липа</item>
+        <item>Акация белая</item>
+        <item>Ольха</item>
+        <item>Клен</item>
+        <item>Ясень обыкновенный</item>
+        <item>Пихта сибирская</item>
+        <item>Сосна обыкновенная</item>
+        <item>Пихта кавказская</item>
+        <item>Сосна кедровая</item>
+        <item>Береза</item>
+        <item>Осина</item>
+    </string-array>
+</resources>
