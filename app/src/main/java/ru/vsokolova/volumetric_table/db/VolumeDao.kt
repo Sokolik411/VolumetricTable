@@ -1,7 +1,6 @@
 package ru.vsokolova.volumetric_table.db
 
 import androidx.room.Dao
-import androidx.room.Insert
 import androidx.room.Query
 
 @Dao
@@ -15,9 +14,4 @@ interface VolumeDao {
 
     @Query("SELECT DISTINCT thick FROM volumetric_table WHERE thick LIKE '%' || :startWith || '%' AND length = :length AND top = :top")
     fun getThickList(startWith: String, length: String, top: Short): List<String>
-
-//    @Query("SELECT length FROM volumetric_table WHERE length LIKE :startWith AND top = :")
-//    fun getLength(startWith: String): Cursor
-
-//    var2 = var1 + " LIKE '" + var2 + "%' AND " + "top" + "='" + var5 + "' AND " + var3 + "='" + var4 + "'";
 }

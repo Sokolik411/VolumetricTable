@@ -55,7 +55,6 @@ class AddDataDialogFragment : DialogFragment() {
         }
 
         viewModel.volume.observe(this) { volumeValue ->
-            println("vera-test $volumeValue")
             if(volumeValue.isNullOrEmpty()){
                 Toast.makeText(requireContext(), resources.getString(R.string.error_incorrect_volume), Toast.LENGTH_SHORT).show()
             } else {
@@ -74,23 +73,6 @@ class AddDataDialogFragment : DialogFragment() {
             }
         }
 
-
-//        val spinnerWoodType: MaterialAutoCompleteTextView = binding.spinnerWoodType
-//        val woodTypes = resources.getStringArray(R.array.woodTypes)
-//        val woodAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, woodTypes)
-//        spinnerWoodType.setText(woodAdapter.getItem(0))
-//        spinnerWoodType.setAdapter(ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, woodTypes))
-//
-//        val spinnerHumidity: MaterialAutoCompleteTextView = binding.spinnerHumidityValue
-//        val humidityValues = resources.getStringArray(R.array.humidityValues)
-//        val humidityAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, humidityValues)
-//        spinnerHumidity.setText(humidityAdapter.getItem(0))
-//        spinnerHumidity.setAdapter(humidityAdapter)
-
-
-//        densityViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
-//        }
         return root
     }
 

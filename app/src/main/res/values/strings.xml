@@ -5,11 +5,13 @@
     <string name="title_gost">Гост</string>
 
     <string name="title_trunk_apex">Вершинная часть ствола</string>
-    <string name="title_wood_type">Порода дерева</string>
-    <string name="title_moisture">Влажность, %</string>
     <string name="title_length">Длина, м</string>
     <string name="title_diameter">Диаметр, см</string>
     <string name="title_amount">Количество, шт</string>
+    <string name="title_data">Введите данные</string>
+    <string name="title_result">Результат</string>
+    <string name="title_wood_type">Порода дерева</string>
+    <string name="title_moisture">Влажность, %</string>
 
     <string name="action_add">Добавить</string>
 
