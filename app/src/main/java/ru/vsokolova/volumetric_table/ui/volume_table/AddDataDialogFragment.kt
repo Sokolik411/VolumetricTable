@@ -1,17 +1,18 @@
 package ru.vsokolova.volumetric_table.ui.volume_table
 
-import android.R
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.EditText
+import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.DialogFragment
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import ru.vsokolova.volumetric_table.Dependencies
+import ru.vsokolova.volumetric_table.R
 import ru.vsokolova.volumetric_table.databinding.DialogVolumeTableDataBinding
-
 
 class AddDataDialogFragment : DialogFragment() {
 
@@ -26,11 +27,11 @@ class AddDataDialogFragment : DialogFragment() {
     ): View {
         _binding = DialogVolumeTableDataBinding.inflate(layoutInflater)
         val root: View = binding.root
-
-
         val checkboxTrunkApex = binding.checkboxTrunkApex
-
         val textViewLength: MaterialAutoCompleteTextView = binding.textViewLength
+        val textViewThick: MaterialAutoCompleteTextView = binding.textViewThick
+        val editTextAmount: EditText = binding.editTextAmount
+
         textViewLength.addTextChangedListener {
             viewModel.getLengths(it.toString(), checkboxTrunkApex.isChecked)
         }
@@ -38,25 +39,39 @@ class AddDataDialogFragment : DialogFragment() {
         viewModel.lengths.observe(
             this
         ) { lengthArray ->
-            val adapter = ArrayAdapter(requireContext(), R.layout.simple_list_item_1, lengthArray.orEmpty())
+            val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, lengthArray.orEmpty())
             adapter.filter.filter(textViewLength.text.toString())
             textViewLength.setAdapter(adapter)
         }
 
-        val textViewThick: MaterialAutoCompleteTextView = binding.textViewThick
         textViewThick.addTextChangedListener {
             viewModel.getThicks(it.toString(), textViewLength.text.toString(), checkboxTrunkApex.isChecked)
         }
 
         viewModel.thicks.observe(this) { thickArray ->
-            val adapter = ArrayAdapter(requireContext(), R.layout.simple_list_item_1, thickArray.orEmpty())
+            val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, thickArray.orEmpty())
             adapter.filter.filter(textViewThick.text.toString())
             textViewThick.setAdapter(adapter)
         }
 
-        binding.buttonAdd.setOnClickListener{
-            val volume = viewModel.getVolume(textViewLength.text.toString(), textViewThick.text.toString(), checkboxTrunkApex.isChecked)
-            println("vera-test $volume")
+        viewModel.volume.observe(this) { volumeValue ->
+            println("vera-test $volumeValue")
+            if(volumeValue.isNullOrEmpty()){
+                Toast.makeText(requireContext(), resources.getString(R.string.error_incorrect_volume), Toast.LENGTH_SHORT).show()
+            } else {
+                val amount = editTextAmount.text.toString()
+                //todo deleted this
+                Toast.makeText(requireContext(), "В БД добавлено $volumeValue", Toast.LENGTH_SHORT).show()
+                //save to db
+            }
+        }
+
+        binding.buttonAdd.setOnClickListener {
+            if (editTextAmount.text.toString().isEmpty()) {
+                Toast.makeText(requireContext(), resources.getString(R.string.error_empty_amount), Toast.LENGTH_SHORT).show()
+            } else {
+                viewModel.getVolume(textViewLength.text.toString(), textViewThick.text.toString(), checkboxTrunkApex.isChecked)
+            }
         }
 
 

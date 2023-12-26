@@ -12,4 +12,7 @@
     <string name="title_amount">Количество, шт</string>
 
     <string name="action_add">Добавить</string>
+
+    <string name="error_empty_amount">Заполните количество</string>
+    <string name="error_incorrect_volume">Значение не найдено. Пожалуйста, проверьте правильность данных</string>
 </resources>
