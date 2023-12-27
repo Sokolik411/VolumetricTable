@@ -24,9 +24,12 @@ class DensityFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         _binding = FragmentDensityBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         val spinnerWoodType: MaterialAutoCompleteTextView = binding.spinnerWoodType
         val spinnerHumidity: MaterialAutoCompleteTextView = binding.spinnerHumidityValue
@@ -49,8 +52,6 @@ class DensityFragment : Fragment() {
         viewModel.density.observe(viewLifecycleOwner) {
             textViewResult.text = resources.getString(R.string.density_result, it)
         }
-
-        return root
     }
 
     override fun onDestroyView() {

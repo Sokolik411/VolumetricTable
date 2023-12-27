@@ -26,7 +26,12 @@ class AddDataDialogFragment : DialogFragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = DialogVolumeTableDataBinding.inflate(layoutInflater)
-        val root: View = binding.root
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         val checkboxTrunkApex = binding.checkboxTrunkApex
         val textViewLength: MaterialAutoCompleteTextView = binding.textViewLength
         val textViewThick: MaterialAutoCompleteTextView = binding.textViewThick
@@ -72,8 +77,6 @@ class AddDataDialogFragment : DialogFragment() {
                 viewModel.getVolume(textViewLength.text.toString(), textViewThick.text.toString(), checkboxTrunkApex.isChecked)
             }
         }
-
-        return root
     }
 
     companion object {
