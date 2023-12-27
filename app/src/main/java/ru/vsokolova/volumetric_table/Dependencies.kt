@@ -2,8 +2,8 @@ package ru.vsokolova.volumetric_table
 
 import android.content.Context
 import androidx.room.Room
-import ru.vsokolova.volumetric_table.db.VolumeDatabase
-import ru.vsokolova.volumetric_table.db.VolumeRepository
+import ru.vsokolova.volumetric_table.db.volume.VolumeDatabase
+import ru.vsokolova.volumetric_table.db.volume.VolumeRepository
 import ru.vsokolova.volumetric_table.db.density.DensityDatabase
 import ru.vsokolova.volumetric_table.db.density.DensityRepository
 

@@ -1,4 +1,4 @@
-package ru.vsokolova.volumetric_table.db
+package ru.vsokolova.volumetric_table.db.volume
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

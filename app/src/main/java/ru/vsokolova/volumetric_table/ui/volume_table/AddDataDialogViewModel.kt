@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import ru.vsokolova.volumetric_table.db.VolumeRepository
+import ru.vsokolova.volumetric_table.db.volume.VolumeRepository
 
 class AddDataDialogViewModel(private val volumeRepository: VolumeRepository) : ViewModel()  {
     private val _lengths = MutableLiveData<List<String>>()
