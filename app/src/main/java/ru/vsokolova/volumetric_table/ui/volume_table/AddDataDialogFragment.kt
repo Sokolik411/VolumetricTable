@@ -63,10 +63,10 @@ class AddDataDialogFragment : DialogFragment() {
             if(volumeValue.isNullOrEmpty()){
                 Toast.makeText(requireContext(), resources.getString(R.string.error_incorrect_volume), Toast.LENGTH_SHORT).show()
             } else {
-                val amount = editTextAmount.text.toString()
                 //todo deleted this
                 Toast.makeText(requireContext(), "В БД добавлено $volumeValue", Toast.LENGTH_SHORT).show()
                 //save to db
+                viewModel._amount.value = editTextAmount.text.toString()
             }
         }
 
@@ -75,6 +75,7 @@ class AddDataDialogFragment : DialogFragment() {
                 Toast.makeText(requireContext(), resources.getString(R.string.error_empty_amount), Toast.LENGTH_SHORT).show()
             } else {
                 viewModel.getVolume(textViewLength.text.toString(), textViewThick.text.toString(), checkboxTrunkApex.isChecked)
+                dismiss()
             }
         }
     }
