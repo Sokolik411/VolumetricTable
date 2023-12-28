@@ -7,12 +7,15 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.setFragmentResult
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import ru.vsokolova.volumetric_table.Dependencies
 import ru.vsokolova.volumetric_table.R
 import ru.vsokolova.volumetric_table.databinding.DialogVolumeTableDataBinding
+import ru.vsokolova.volumetric_table.db.chips_data.ChipObject
 
 class AddDataDialogFragment : DialogFragment() {
 
@@ -64,9 +67,13 @@ class AddDataDialogFragment : DialogFragment() {
                 Toast.makeText(requireContext(), resources.getString(R.string.error_incorrect_volume), Toast.LENGTH_SHORT).show()
             } else {
                 //todo deleted this
-                Toast.makeText(requireContext(), "В БД добавлено $volumeValue", Toast.LENGTH_SHORT).show()
-                //save to db
-                viewModel._amount.value = editTextAmount.text.toString()
+                Toast.makeText(requireContext(), "Добавлено $volumeValue", Toast.LENGTH_SHORT).show()
+                //save to db ?
+
+                val amountValue = editTextAmount.text.toString()
+                val chipObj = ChipObject(amountValue, volumeValue)
+                setFragmentResult("requestKey", bundleOf("bundleKey" to chipObj))
+                dismiss()
             }
         }
 
@@ -75,7 +82,6 @@ class AddDataDialogFragment : DialogFragment() {
                 Toast.makeText(requireContext(), resources.getString(R.string.error_empty_amount), Toast.LENGTH_SHORT).show()
             } else {
                 viewModel.getVolume(textViewLength.text.toString(), textViewThick.text.toString(), checkboxTrunkApex.isChecked)
-                dismiss()
             }
         }
     }
