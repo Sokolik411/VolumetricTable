@@ -1,22 +1,15 @@
 package ru.vsokolova.volumetric_table.ui.volume_table
 
-import android.R
-import android.app.AlertDialog
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
 import android.widget.Button
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.setFragmentResultListener
-import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.chip.Chip
-import ru.vsokolova.volumetric_table.Dependencies
-import ru.vsokolova.volumetric_table.databinding.DialogVolumeTableDataBinding
+import ru.vsokolova.volumetric_table.R
 import ru.vsokolova.volumetric_table.databinding.FragmentVolumetricTableBinding
 import ru.vsokolova.volumetric_table.db.chips_data.ChipObject
 
@@ -33,6 +26,7 @@ class VolumeTableFragment : Fragment() {
         childFragmentManager.setFragmentResultListener("requestKey", this) { key, bundle ->
             val chipObject = bundle.getSerializable("bundleKey") as ChipObject
             println(chipObject.getVolume() + " "+ chipObject.getAmount() + " " + chipObject.getResult())
+            addChips(chipObject)
         }
     }
 
@@ -58,6 +52,11 @@ class VolumeTableFragment : Fragment() {
             )
         }
 
+        viewModel.volumeResult.observe(viewLifecycleOwner){
+            val result = String.format("%.2f", it)
+            binding.textviewResult.text = resources.getString(R.string.volume_result_template, result)
+        }
+
     }
 
     override fun onDestroyView() {
@@ -65,7 +64,21 @@ class VolumeTableFragment : Fragment() {
         _binding = null
     }
 
-    private fun addChips(volume: String, ){
-
+    private fun addChips(chipObg: ChipObject){
+        val chip = Chip(requireContext())
+        val title = chipObg.getVolume() + "*" + chipObg.getAmount() + " шт"
+        chip.text = title
+        chip.isCloseIconVisible = true
+        chip.minWidth = 100
+        chip.setOnCloseIconClickListener { view: View? ->
+            try {
+                viewModel.changeVolumeResult(chipObg.getResult()*(-1))
+                binding.chipGroup.removeView(view)
+            } catch (e: Exception) {
+                println("can't remove chips: $e")
+            }
+        }
+        viewModel.changeVolumeResult(chipObg.getResult())
+        binding.chipGroup.addView(chip)
     }
 }

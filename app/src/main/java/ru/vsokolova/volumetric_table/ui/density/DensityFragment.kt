@@ -50,7 +50,7 @@ class DensityFragment : Fragment() {
 
 
         viewModel.density.observe(viewLifecycleOwner) {
-            textViewResult.text = resources.getString(R.string.density_result, it)
+            textViewResult.text = resources.getString(R.string.density_result_template, it)
         }
     }
 

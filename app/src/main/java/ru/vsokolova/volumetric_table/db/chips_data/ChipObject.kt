@@ -3,7 +3,7 @@ package ru.vsokolova.volumetric_table.db.chips_data
 import java.io.Serializable
 
 class ChipObject(private val amount: String, private val volume: String) : Serializable {
-    private val result: String = (Integer.valueOf(amount)*(volume).toDouble()).toString()
+    private val result: Double = Integer.valueOf(amount)*(volume).toDouble()
 
     fun getAmount():String {
         return amount
@@ -13,7 +13,7 @@ class ChipObject(private val amount: String, private val volume: String) : Seria
         return volume
     }
 
-    fun getResult():String {
+    fun getResult():Double {
         return result
     }
 }

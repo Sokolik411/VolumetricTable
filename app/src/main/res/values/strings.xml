@@ -14,7 +14,8 @@
     <string name="title_moisture">Влажность, %</string>
 
     <string name="action_add">Добавить</string>
-    <string name="density_result">%s кг/м3</string>
+    <string name="density_result_template">%s кг/м3</string>
+    <string name="volume_result_template">%s м3</string>
 
     <string name="error_empty_amount">Заполните количество</string>
     <string name="error_incorrect_volume">Значение не найдено. Пожалуйста, проверьте правильность данных</string>

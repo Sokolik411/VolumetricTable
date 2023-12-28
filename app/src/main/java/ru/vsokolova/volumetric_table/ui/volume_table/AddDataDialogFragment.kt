@@ -66,10 +66,6 @@ class AddDataDialogFragment : DialogFragment() {
             if(volumeValue.isNullOrEmpty()){
                 Toast.makeText(requireContext(), resources.getString(R.string.error_incorrect_volume), Toast.LENGTH_SHORT).show()
             } else {
-                //todo deleted this
-                Toast.makeText(requireContext(), "Добавлено $volumeValue", Toast.LENGTH_SHORT).show()
-                //save to db ?
-
                 val amountValue = editTextAmount.text.toString()
                 val chipObj = ChipObject(amountValue, volumeValue)
                 setFragmentResult("requestKey", bundleOf("bundleKey" to chipObj))
@@ -78,7 +74,8 @@ class AddDataDialogFragment : DialogFragment() {
         }
 
         binding.buttonAdd.setOnClickListener {
-            if (editTextAmount.text.toString().isEmpty()) {
+            val amountString = editTextAmount.text.toString()
+            if (editTextAmount.text.toString().isEmpty() || Integer.parseInt(amountString) <= 0) {
                 Toast.makeText(requireContext(), resources.getString(R.string.error_empty_amount), Toast.LENGTH_SHORT).show()
             } else {
                 viewModel.getVolume(textViewLength.text.toString(), textViewThick.text.toString(), checkboxTrunkApex.isChecked)
