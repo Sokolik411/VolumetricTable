@@ -4,8 +4,6 @@ import android.content.Context
 import androidx.room.Room
 import ru.vsokolova.volumetric_table.db.volume.VolumeDatabase
 import ru.vsokolova.volumetric_table.db.volume.VolumeRepository
-import ru.vsokolova.volumetric_table.db.density.DensityDatabase
-import ru.vsokolova.volumetric_table.db.density.DensityRepository
 
 object Dependencies {
 
@@ -25,16 +23,5 @@ object Dependencies {
             .build()
     }
 
-    private val densityDatabase: DensityDatabase by lazy {
-        Room.databaseBuilder(
-            applicationContext,
-            DensityDatabase::class.java,
-            "density_table"
-        )
-            .createFromAsset("density_table")
-            .build()
-    }
-
     val volumeRepository: VolumeRepository by lazy { VolumeRepository(volumeDatabase.getVolumeDao()) }
-    val densityRepository: DensityRepository by lazy { DensityRepository(densityDatabase.getDensityDao()) }
 }

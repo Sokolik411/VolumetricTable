@@ -8,16 +8,27 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
-import ru.vsokolova.volumetric_table.Dependencies
 import ru.vsokolova.volumetric_table.R
 import ru.vsokolova.volumetric_table.databinding.FragmentDensityBinding
+import ru.vsokolova.volumetric_table.di.density.DensityFragmentComponent
+import ru.vsokolova.volumetric_table.ui.MainActivity
+import javax.inject.Inject
 
 class DensityFragment : Fragment() {
 
     private var _binding: FragmentDensityBinding? = null
 
     private val binding get() = _binding!!
-    private val viewModel by lazy { DensityViewModel(Dependencies.densityRepository) }
+
+    @Inject
+    lateinit var viewModel: DensityViewModel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        DensityFragmentComponent
+            .create((requireActivity() as MainActivity).mainActivityComponent)
+            .inject(this)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

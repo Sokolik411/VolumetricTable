@@ -7,8 +7,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import ru.vsokolova.volumetric_table.db.density.DensityRepository
+import javax.inject.Inject
 
-class DensityViewModel(private val densityRepository: DensityRepository) : ViewModel() {
+class DensityViewModel @Inject constructor(
+    private val densityRepository: DensityRepository
+) : ViewModel() {
 
     private val _wood = MutableLiveData<String>()
     private val _humidity = MutableLiveData<String>()
