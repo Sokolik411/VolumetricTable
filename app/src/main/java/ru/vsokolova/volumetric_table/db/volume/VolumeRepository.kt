@@ -2,8 +2,9 @@ package ru.vsokolova.volumetric_table.db.volume
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class VolumeRepository(private val volumeDao: VolumeDao) {
+class VolumeRepository @Inject constructor(private val volumeDao: VolumeDao) {
 
     suspend fun getAllLength(startWith: String, top: Short): List<String> {
         return withContext(Dispatchers.IO){

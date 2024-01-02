@@ -8,7 +8,6 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import ru.vsokolova.volumetric_table.App
-import ru.vsokolova.volumetric_table.Dependencies
 import ru.vsokolova.volumetric_table.R
 import ru.vsokolova.volumetric_table.databinding.ActivityMainBinding
 import ru.vsokolova.volumetric_table.di.DaggerMainActivityComponent
@@ -21,7 +20,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var mainActivityComponent: MainActivityComponent
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        Dependencies.init(applicationContext)
         super.onCreate(savedInstanceState)
 
         val applicationComponent = (application as App).getAppComponent()
@@ -35,11 +33,11 @@ class MainActivity : AppCompatActivity() {
         val navView: BottomNavigationView = binding.navView
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_volumetrc_table, R.id.navigation_density, R.id.navigation_gost
+                R.id.navigation_volumetrc_table,
+                R.id.navigation_density,
+                R.id.navigation_gost
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

@@ -12,16 +12,28 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.setFragmentResult
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
-import ru.vsokolova.volumetric_table.Dependencies
 import ru.vsokolova.volumetric_table.R
 import ru.vsokolova.volumetric_table.databinding.DialogVolumeTableDataBinding
 import ru.vsokolova.volumetric_table.db.chips_data.ChipObject
+import ru.vsokolova.volumetric_table.di.density.DensityFragmentComponent
+import ru.vsokolova.volumetric_table.di.volume.VolumeFragmentComponent
+import ru.vsokolova.volumetric_table.ui.MainActivity
+import javax.inject.Inject
 
 class AddDataDialogFragment : DialogFragment() {
 
     private var _binding: DialogVolumeTableDataBinding? = null
     private val binding get() = _binding!!
-    private val viewModel by lazy { AddDataDialogViewModel(Dependencies.volumeRepository) }
+
+    @Inject
+    lateinit var viewModel: AddDataDialogViewModel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        VolumeFragmentComponent
+            .create((requireActivity() as MainActivity).mainActivityComponent)
+            .inject(this)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
