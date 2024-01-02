@@ -1,5 +1,7 @@
 package ru.vsokolova.volumetric_table.ui.volume_table
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -25,7 +27,7 @@ class VolumeTableFragment : Fragment() {
         super.onCreate(savedInstanceState)
         childFragmentManager.setFragmentResultListener("requestKey", this) { key, bundle ->
             val chipObject = bundle.getSerializable("bundleKey") as ChipObject
-            println(chipObject.getVolume() + " "+ chipObject.getAmount() + " " + chipObject.getResult())
+            println(chipObject.getVolume() + " " + chipObject.getAmount() + " " + chipObject.getResult())
             addChips(chipObject)
         }
     }
@@ -52,9 +54,22 @@ class VolumeTableFragment : Fragment() {
             )
         }
 
-        viewModel.volumeResult.observe(viewLifecycleOwner){
+        viewModel.volumeResult.observe(viewLifecycleOwner) {
             val result = String.format("%.2f", it)
-            binding.textviewResult.text = resources.getString(R.string.volume_result_template, result)
+            val textViewResult = binding.textviewResult
+
+            textViewResult
+                .animate()
+                .alpha(0f)
+                .setDuration(600)
+                .withEndAction {
+                    textViewResult.text =
+                        resources.getString(R.string.volume_result_template, result)
+                    textViewResult
+                        .animate()
+                        .alpha(1f)
+                        .duration = 600
+                }
         }
 
     }
@@ -64,21 +79,32 @@ class VolumeTableFragment : Fragment() {
         _binding = null
     }
 
-    private fun addChips(chipObg: ChipObject){
+    private fun addChips(chipObg: ChipObject) {
         val chip = Chip(requireContext())
         val title = chipObg.getVolume() + "*" + chipObg.getAmount() + " шт"
         chip.text = title
         chip.isCloseIconVisible = true
         chip.minWidth = 100
+        chip.alpha = 0f
         chip.setOnCloseIconClickListener { view: View? ->
             try {
-                viewModel.changeVolumeResult(chipObg.getResult()*(-1))
-                binding.chipGroup.removeView(view)
+                viewModel.changeVolumeResult(chipObg.getResult() * (-1))
+
+                chip.animate()
+                    .alpha(0f)
+                    .setDuration(600)
+                    .withEndAction {
+                        binding.chipGroup.removeView(view)
+                    }
+
             } catch (e: Exception) {
                 println("can't remove chips: $e")
             }
         }
         viewModel.changeVolumeResult(chipObg.getResult())
         binding.chipGroup.addView(chip)
+        chip.animate()
+            .alpha(1f)
+            .duration = 600
     }
 }
