@@ -12,6 +12,7 @@ import ru.vsokolova.volumetric_table.R
 import ru.vsokolova.volumetric_table.databinding.FragmentDensityBinding
 import ru.vsokolova.volumetric_table.di.density.DensityFragmentComponent
 import ru.vsokolova.volumetric_table.ui.MainActivity
+import ru.vsokolova.volumetric_table.utils.alphaAnimate
 import javax.inject.Inject
 
 class DensityFragment : Fragment() {
@@ -61,7 +62,11 @@ class DensityFragment : Fragment() {
 
 
         viewModel.density.observe(viewLifecycleOwner) {
-            textViewResult.text = resources.getString(R.string.density_result_template, it)
+            textViewResult.alphaAnimate(0f) {
+                textViewResult.text =
+                    resources.getString(R.string.density_result_template, it)
+                textViewResult.alphaAnimate(1f) {}
+            }
         }
     }
 

@@ -1,7 +1,5 @@
 package ru.vsokolova.volumetric_table.ui.volume_table
 
-import android.animation.Animator
-import android.animation.AnimatorListenerAdapter
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,7 +12,7 @@ import com.google.android.material.chip.Chip
 import ru.vsokolova.volumetric_table.R
 import ru.vsokolova.volumetric_table.databinding.FragmentVolumetricTableBinding
 import ru.vsokolova.volumetric_table.db.chips_data.ChipObject
-
+import ru.vsokolova.volumetric_table.utils.alphaAnimate
 
 class VolumeTableFragment : Fragment() {
 
@@ -38,9 +36,7 @@ class VolumeTableFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentVolumetricTableBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        return root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -58,18 +54,11 @@ class VolumeTableFragment : Fragment() {
             val result = String.format("%.2f", it)
             val textViewResult = binding.textviewResult
 
-            textViewResult
-                .animate()
-                .alpha(0f)
-                .setDuration(600)
-                .withEndAction {
-                    textViewResult.text =
-                        resources.getString(R.string.volume_result_template, result)
-                    textViewResult
-                        .animate()
-                        .alpha(1f)
-                        .duration = 600
-                }
+            textViewResult.alphaAnimate(0f) {
+                textViewResult.text =
+                    resources.getString(R.string.volume_result_template, result)
+                textViewResult.alphaAnimate(1f) {}
+            }
         }
 
     }
@@ -89,22 +78,15 @@ class VolumeTableFragment : Fragment() {
         chip.setOnCloseIconClickListener { view: View? ->
             try {
                 viewModel.changeVolumeResult(chipObg.getResult() * (-1))
-
-                chip.animate()
-                    .alpha(0f)
-                    .setDuration(600)
-                    .withEndAction {
-                        binding.chipGroup.removeView(view)
-                    }
-
+                chip.alphaAnimate(0f) {
+                    binding.chipGroup.removeView(view)
+                }
             } catch (e: Exception) {
                 println("can't remove chips: $e")
             }
         }
         viewModel.changeVolumeResult(chipObg.getResult())
         binding.chipGroup.addView(chip)
-        chip.animate()
-            .alpha(1f)
-            .duration = 600
+        chip.alphaAnimate(1f) {}
     }
 }

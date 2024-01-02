@@ -15,7 +15,6 @@ import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import ru.vsokolova.volumetric_table.R
 import ru.vsokolova.volumetric_table.databinding.DialogVolumeTableDataBinding
 import ru.vsokolova.volumetric_table.db.chips_data.ChipObject
-import ru.vsokolova.volumetric_table.di.density.DensityFragmentComponent
 import ru.vsokolova.volumetric_table.di.volume.VolumeFragmentComponent
 import ru.vsokolova.volumetric_table.ui.MainActivity
 import javax.inject.Inject
@@ -111,7 +110,7 @@ class AddDataDialogFragment : DialogFragment() {
             val width = ViewGroup.LayoutParams.MATCH_PARENT
             val height = ViewGroup.LayoutParams.MATCH_PARENT
             dialog.window!!.setLayout(width, height)
-            dialog.window!!.setWindowAnimations(ru.vsokolova.volumetric_table.R.style.Theme_CenterDialog)
+            dialog.window!!.setWindowAnimations(R.style.Theme_CenterDialog)
         }
     }
 }
