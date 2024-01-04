@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/navigation_volumetrc_table"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/ic_volume"
         android:title="@string/title_volumetric_table" />
 
     <item
