@@ -1,83 +1,81 @@
 package ru.vsokolova.volumetric_table.ui.volume_table
 
-import androidx.lifecycle.viewModelScope
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.newSingleThreadContext
+import kotlinx.coroutines.test.StandardTestDispatcher
+import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.resetMain
+import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.test.setMain
 import org.junit.After
+import org.junit.Assert.assertTrue
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mockito
 import ru.vsokolova.volumetric_table.db.volume.VolumeRepository
-import org.junit.Assert.assertTrue
 
+@OptIn(ExperimentalCoroutinesApi::class)
 class AddDataDialogViewModelTest {
     private lateinit var viewModel: AddDataDialogViewModel
     private lateinit var volumeRepository: VolumeRepository
-    private val mainThreadSurrogate = newSingleThreadContext("UI thread")
 
-    @OptIn(ExperimentalCoroutinesApi::class)
+    @get:Rule
+    val rule = InstantTaskExecutorRule()
+
     @Before
-    fun setup(){
+    fun setup() {
         volumeRepository = Mockito.mock(VolumeRepository::class.java)
         viewModel = AddDataDialogViewModel(volumeRepository)
-        Dispatchers.setMain(mainThreadSurrogate)
+        Dispatchers.setMain(StandardTestDispatcher())
     }
 
     @Test
     fun `correct getting list of length`() {
-        viewModel.viewModelScope.launch(Dispatchers.Main) {
+        runTest {
+            Mockito.`when`(volumeRepository.getAllLength(Mockito.anyString(), Mockito.anyShort()))
+                .thenReturn(
+                    listOf("2", "2.1")
+                )
             viewModel.getLengths("2", false)
+            advanceUntilIdle()
+            viewModel.lengths.value?.forEach {
+                assertTrue(it.startsWith("2"))
+            }
         }
-        viewModel.lengths.value?.forEach {
-            assertTrue(it.startsWith("2"))
-        }
-
     }
-
-//    @Test
-//    fun `correct getting list of thicks`() {
-//        viewModel.viewModelScope.launch(Dispatchers.Main) {
-//            viewModel.getThicks("2", "3", false)
-//        }
-//        val expectedArray = arrayOf("30", "32", "34", "36", "38")
-//        val actualArray = arrayOf(viewModel.thicks.value)
-//        assertTrue(expectedArray.contentEquals(actualArray))
-//
-//    }
 
     @Test
-    fun getVolume() {
+    fun `correct getting list of thicks`() {
+        runTest {
+            Mockito.`when`(volumeRepository.getAllThick(Mockito.anyString(), Mockito.anyString(), Mockito.anyShort()))
+                .thenReturn(
+                    listOf("8", "81", "85")
+                )
+            viewModel.getThicks("8","3", false)
+            advanceUntilIdle()
+            viewModel.thicks.value?.forEach {
+                assertTrue(it.startsWith("8"))
+            }
+        }
     }
 
-    @OptIn(ExperimentalCoroutinesApi::class)
+    @Test
+    fun `correct getting volume`() {
+        runTest {
+            Mockito.`when`(volumeRepository.getVolume(Mockito.anyString(), Mockito.anyString(), Mockito.anyShort()))
+                .thenReturn(
+                    "123"
+                )
+            viewModel.getVolume("5","4", false)
+            advanceUntilIdle()
+            assertTrue("123" == viewModel.volume.value)
+        }
+    }
+
     @After
     fun tearDown() {
-        Dispatchers.resetMain() // reset the main dispatcher to the original Main dispatcher
-        mainThreadSurrogate.close()
+        Dispatchers.resetMain()
     }
-
-//    @Test
-//    fun `ValidateInput gives error when username is invalid`() {
-//        viewModel.validateInput("user", "password")
-//
-//        assertTrue(LiveDataTestUtil.getValue(viewModel.enterDetailsState) is EnterDetailsError)
-//    }
-//
-//    @Test
-//    fun `ValidateInput gives error when password is invalid`() {
-//        viewModel.validateInput("username", "pass")
-//
-//        assertTrue(LiveDataTestUtil.getValue(viewModel.enterDetailsState) is EnterDetailsError)
-//    }
-//
-//    @Test
-//    fun `ValidateInput succeeds when input is valid`() {
-//        viewModel.validateInput("username", "password")
-//
-//        assertTrue(LiveDataTestUtil.getValue(viewModel.enterDetailsState) is EnterDetailsSuccess)
-//    }
 }
