@@ -66,4 +66,5 @@ dependencies {
     testImplementation("androidx.arch.core:core-testing:2.2.0")
     testImplementation("org.mockito:mockito-core:5.8.0")
 
+    implementation(project(":gost_feature"))
 }

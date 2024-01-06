@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="gostPages">
+        <item>@drawable/gost_0</item>
+        <item>@drawable/gost_1</item>
+        <item>@drawable/gost_2</item>
+        <item>@drawable/gost_3</item>
+        <item>@drawable/gost_4</item>
+        <item>@drawable/gost_5</item>
+        <item>@drawable/gost_6</item>
+        <item>@drawable/gost_7</item>
+        <item>@drawable/gost_8</item>
+        <item>@drawable/gost_9</item>
+        <item>@drawable/gost_10</item>
+        <item>@drawable/gost_11</item>
+        <item>@drawable/gost_12</item>
+        <item>@drawable/gost_13</item>
+        <item>@drawable/gost_14</item>
+        <item>@drawable/gost_15</item>
+        <item>@drawable/gost_16</item>
+        <item>@drawable/gost_17</item>
+        <item>@drawable/gost_18</item>
+    </integer-array>
+</resources>
