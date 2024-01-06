@@ -1,4 +1,4 @@
-package ru.vsokolova.volumetric_table.ui.volume_table
+package ru.vsokolova.volumetric_table.ui
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import kotlinx.coroutines.Dispatchers
@@ -15,6 +15,7 @@ import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mockito
 import ru.vsokolova.volumetric_table.db.volume.VolumeRepository
+import ru.vsokolova.volumetric_table.ui.volume_table.AddDataDialogViewModel
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class AddDataDialogViewModelTest {
