@@ -7,9 +7,11 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import ru.vsokolova.volumetric_table.R
 import ru.vsokolova.volumetric_table.databinding.FragmentDensityBinding
+import ru.vsokolova.volumetric_table.di.ViewModelFactory
 import ru.vsokolova.volumetric_table.di.density.DensityFragmentComponent
 import ru.vsokolova.volumetric_table.ui.MainActivity
 import ru.vsokolova.volumetric_table.utils.alphaAnimate
@@ -18,11 +20,12 @@ import javax.inject.Inject
 class DensityFragment : Fragment() {
 
     private var _binding: FragmentDensityBinding? = null
-
     private val binding get() = _binding!!
 
     @Inject
-    lateinit var viewModel: DensityViewModel
+    lateinit var viewModelFactory: ViewModelFactory
+
+    private val viewModel by viewModels<DensityViewModel> { viewModelFactory }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,19 +50,20 @@ class DensityFragment : Fragment() {
         val spinnerHumidity: MaterialAutoCompleteTextView = binding.spinnerHumidityValue
         val textViewResult: TextView = binding.textViewResult
 
-        val woodTypes = resources.getStringArray(R.array.woodTypes)
-        val woodAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, woodTypes)
-//        spinnerWoodType.setText(woodAdapter.getItem(0))
-        spinnerWoodType.setAdapter(woodAdapter)
-        spinnerWoodType.onItemClickListener = viewModel.onWoodTypeClickListener
+        //adapter created with delay before recreated
+        binding.root.post {
+            val woodAdapter = ArrayAdapter.createFromResource(
+                requireContext(), R.array.woodTypes, android.R.layout.simple_list_item_1
+            )
+            spinnerWoodType.setAdapter(woodAdapter)
+            spinnerWoodType.onItemClickListener = viewModel.onWoodTypeClickListener
 
-        val humidityValues = resources.getStringArray(R.array.humidityValues)
-        val humidityAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, humidityValues)
-//        spinnerHumidity.setText(humidityAdapter.getItem(0))
-        spinnerHumidity.setAdapter(humidityAdapter)
-
-        spinnerHumidity.onItemClickListener = viewModel.onHumidityClickListener
-
+            val humidityAdapter = ArrayAdapter.createFromResource(
+                requireContext(), R.array.humidityValues, android.R.layout.simple_list_item_1
+            )
+            spinnerHumidity.setAdapter(humidityAdapter)
+            spinnerHumidity.onItemClickListener = viewModel.onHumidityClickListener
+        }
 
         viewModel.density.observe(viewLifecycleOwner) {
             textViewResult.alphaAnimate(0f) {
