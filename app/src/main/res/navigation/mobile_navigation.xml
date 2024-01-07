@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_volumetrc_table"
-        android:name="ru.vsokolova.volumetric_table.ui.volume_table.VolumeTableFragment"
+        android:name="ru.vsokolova.volumetric_table.ui.VolumeTableFragment"
         android:label="@string/title_volumetric_table"
         tools:layout="@layout/fragment_volumetric_table" />
 

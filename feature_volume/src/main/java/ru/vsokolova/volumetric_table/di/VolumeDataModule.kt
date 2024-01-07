@@ -1,12 +1,12 @@
-package ru.vsokolova.volumetric_table.di.volume
+package ru.vsokolova.volumetric_table.di
 
 import android.content.Context
 import androidx.room.Room
 import dagger.Module
 import dagger.Provides
-import ru.vsokolova.volumetric_table.db.volume.VolumeDao
-import ru.vsokolova.volumetric_table.db.volume.VolumeDatabase
-import ru.vsokolova.volumetric_table.db.volume.VolumeRepository
+import ru.vsokolova.volumetric_table.db.VolumeDao
+import ru.vsokolova.volumetric_table.db.VolumeDatabase
+import ru.vsokolova.volumetric_table.db.VolumeRepository
 import javax.inject.Singleton
 
 @Module

@@ -1,4 +1,4 @@
-package ru.vsokolova.volumetric_table.db.chips_data
+package ru.vsokolova.volumetric_table.db
 
 import java.io.Serializable
 

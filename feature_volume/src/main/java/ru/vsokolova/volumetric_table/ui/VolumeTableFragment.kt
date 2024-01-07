@@ -1,4 +1,4 @@
-package ru.vsokolova.volumetric_table.ui.volume_table
+package ru.vsokolova.volumetric_table.ui
 
 import android.os.Build
 import android.os.Bundle
@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.chip.Chip
 import ru.vsokolova.volumetric_table.R
 import ru.vsokolova.volumetric_table.databinding.FragmentVolumetricTableBinding
-import ru.vsokolova.volumetric_table.db.chips_data.ChipObject
+import ru.vsokolova.volumetric_table.db.ChipObject
 import ru.vsokolova.volumetric_table.utils.alphaAnimate
 
 class VolumeTableFragment : Fragment() {

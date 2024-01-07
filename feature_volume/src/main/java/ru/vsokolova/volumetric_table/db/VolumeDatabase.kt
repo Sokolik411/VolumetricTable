@@ -1,4 +1,4 @@
-package ru.vsokolova.volumetric_table.db.volume
+package ru.vsokolova.volumetric_table.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

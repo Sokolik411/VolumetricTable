@@ -1,4 +1,4 @@
-package ru.vsokolova.volumetric_table.ui.volume_table
+package ru.vsokolova.volumetric_table.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

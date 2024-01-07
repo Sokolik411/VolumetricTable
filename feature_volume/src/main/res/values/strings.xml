@@ -1,0 +1,12 @@
+<resources>
+    <string name="title_trunk_apex">Вершинная часть ствола</string>
+    <string name="title_length">Длина, м</string>
+    <string name="title_diameter">Диаметр, см</string>
+    <string name="title_amount">Количество, шт</string>
+
+    <string name="action_add">Добавить</string>
+    <string name="volume_result_template">%s м3</string>
+
+    <string name="error_empty_amount">Заполните количество</string>
+    <string name="error_incorrect_volume">Значение не найдено. Пожалуйста, проверьте правильность данных</string>
+</resources>

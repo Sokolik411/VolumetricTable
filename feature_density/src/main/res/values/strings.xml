@@ -1,3 +1,6 @@
 <resources>
+
+    <string name="title_wood_type">Порода дерева</string>
+    <string name="title_moisture">Влажность, %</string>
     <string name="density_result_template">%s кг/м3</string>
 </resources>

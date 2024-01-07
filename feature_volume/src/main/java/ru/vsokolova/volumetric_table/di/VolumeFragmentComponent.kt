@@ -1,9 +1,8 @@
-package ru.vsokolova.volumetric_table.di.volume
+package ru.vsokolova.volumetric_table.di
 
 import dagger.Component
-import ru.vsokolova.volumetric_table.di.AppProvider
-import ru.vsokolova.volumetric_table.ui.volume_table.AddDataDialogFragment
-import ru.vsokolova.volumetric_table.ui.volume_table.AddDataDialogViewModel
+import ru.vsokolova.volumetric_table.ui.AddDataDialogFragment
+import ru.vsokolova.volumetric_table.ui.AddDataDialogViewModel
 import javax.inject.Singleton
 
 @Singleton

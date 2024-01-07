@@ -7,6 +7,9 @@ plugins {
 android {
     namespace = "ru.vsokolova.volumetric_table"
     compileSdk = 34
+    defaultConfig {
+        minSdk = 28
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8

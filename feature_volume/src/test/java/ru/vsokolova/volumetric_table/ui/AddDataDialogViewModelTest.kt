@@ -14,8 +14,7 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mockito
-import ru.vsokolova.volumetric_table.db.volume.VolumeRepository
-import ru.vsokolova.volumetric_table.ui.volume_table.AddDataDialogViewModel
+import ru.vsokolova.volumetric_table.db.VolumeRepository
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class AddDataDialogViewModelTest {

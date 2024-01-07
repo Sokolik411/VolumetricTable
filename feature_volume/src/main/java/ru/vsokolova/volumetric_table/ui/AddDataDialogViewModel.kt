@@ -1,11 +1,11 @@
-package ru.vsokolova.volumetric_table.ui.volume_table
+package ru.vsokolova.volumetric_table.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import ru.vsokolova.volumetric_table.db.volume.VolumeRepository
+import ru.vsokolova.volumetric_table.db.VolumeRepository
 import javax.inject.Inject
 
 class AddDataDialogViewModel @Inject constructor(
