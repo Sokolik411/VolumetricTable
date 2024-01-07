@@ -12,8 +12,11 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/density_feature" />
-            <option value="$PROJECT_DIR$/gost_feature" />
+            <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/core_api" />
+            <option value="$PROJECT_DIR$/feature_density" />
+            <option value="$PROJECT_DIR$/feature_gost" />
+            <option value="$PROJECT_DIR$/feature_volume" />
           </set>
         </option>
       </GradleProjectSettings>
