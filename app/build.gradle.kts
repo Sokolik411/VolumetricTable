@@ -67,6 +67,6 @@ dependencies {
     testImplementation("org.mockito:mockito-core:5.8.0")
 
     implementation(project(":core"))
-    implementation(project(":gost_feature"))
-    implementation(project(":density_feature"))
+    implementation(project(":feature_gost"))
+    implementation(project(":feature_density"))
 }

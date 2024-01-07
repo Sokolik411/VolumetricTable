@@ -15,7 +15,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "VolumetricTable"
 include(":app")
-include(":gost_feature")
-include(":density_feature")
+include(":feature_gost")
+include(":feature_density")
 include(":core")
 include(":core_api")
