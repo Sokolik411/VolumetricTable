@@ -1,4 +1,4 @@
-package ru.vsokolova.volumetric_table.db.density
+package ru.vsokolova.volumetric_table.db
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

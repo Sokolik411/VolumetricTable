@@ -1,4 +1,4 @@
-package ru.vsokolova.volumetric_table.ui.density
+package ru.vsokolova.volumetric_table.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,9 +11,9 @@ import androidx.fragment.app.viewModels
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import ru.vsokolova.volumetric_table.R
 import ru.vsokolova.volumetric_table.databinding.FragmentDensityBinding
+import ru.vsokolova.volumetric_table.di.AppWithProvider
 import ru.vsokolova.volumetric_table.di.ViewModelFactory
-import ru.vsokolova.volumetric_table.di.density.DensityFragmentComponent
-import ru.vsokolova.volumetric_table.ui.MainActivity
+import ru.vsokolova.volumetric_table.di.DensityFragmentComponent
 import ru.vsokolova.volumetric_table.utils.alphaAnimate
 import javax.inject.Inject
 
@@ -30,7 +30,7 @@ class DensityFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         DensityFragmentComponent
-            .create((requireActivity() as MainActivity).mainActivityComponent)
+            .create((requireActivity().application as AppWithProvider).getAppProvider())
             .inject(this)
     }
 

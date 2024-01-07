@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/navigation_density"
-        android:name="ru.vsokolova.volumetric_table.ui.density.DensityFragment"
+        android:name="ru.vsokolova.volumetric_table.ui.DensityFragment"
         android:label="@string/title_density"
         tools:layout="@layout/fragment_density" />
 

@@ -15,6 +15,8 @@ import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import ru.vsokolova.volumetric_table.R
 import ru.vsokolova.volumetric_table.databinding.DialogVolumeTableDataBinding
 import ru.vsokolova.volumetric_table.db.chips_data.ChipObject
+import ru.vsokolova.volumetric_table.di.AppComponent
+import ru.vsokolova.volumetric_table.di.AppProvider
 import ru.vsokolova.volumetric_table.di.volume.VolumeFragmentComponent
 import ru.vsokolova.volumetric_table.ui.MainActivity
 import javax.inject.Inject
@@ -30,7 +32,7 @@ class AddDataDialogFragment : DialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         VolumeFragmentComponent
-            .create((requireActivity() as MainActivity).mainActivityComponent)
+            .create(AppComponent.create(requireActivity().application))
             .inject(this)
     }
 

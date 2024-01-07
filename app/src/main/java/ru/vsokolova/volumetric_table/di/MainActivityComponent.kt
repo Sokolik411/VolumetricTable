@@ -1,20 +1,16 @@
 package ru.vsokolova.volumetric_table.di
 
-import android.content.Context
-import dagger.BindsInstance
+import android.app.Application
 import dagger.Component
 
-@Component(dependencies = [AppComponent::class])
+@Component(dependencies = [AppProvider::class])
 interface MainActivityComponent {
 
-    @Component.Factory
-    interface ComponentFactory {
-        fun create (
-            @BindsInstance context: Context,
-            appComponent: AppComponent
-        ): MainActivityComponent
+    companion object {
+        fun create(application: Application): MainActivityComponent {
+            return DaggerMainActivityComponent.builder()
+                .appProvider(AppComponent.create(application))
+                .build()
+        }
     }
-
-    fun provideAppContext(): Context
-
 }

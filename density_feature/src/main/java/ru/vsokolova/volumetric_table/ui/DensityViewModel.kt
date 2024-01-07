@@ -1,23 +1,20 @@
-package ru.vsokolova.volumetric_table.ui.density
+package ru.vsokolova.volumetric_table.ui
 
 import android.widget.AdapterView
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import ru.vsokolova.volumetric_table.db.density.DensityRepository
+import ru.vsokolova.volumetric_table.db.DensityRepository
 import javax.inject.Inject
 
 class DensityViewModel @Inject constructor(
     private val densityRepository: DensityRepository
 ) : ViewModel() {
 
-     val _wood = MutableLiveData<String>()
-     val _humidity = MutableLiveData<String>()
-    val wood: LiveData<String> = _wood
-    val humidity: LiveData<String> = _humidity
+    private val _wood = MutableLiveData<String>()
+    private val _humidity = MutableLiveData<String>()
 
     val density = MediatorLiveData<String>().apply {
         fun update() {

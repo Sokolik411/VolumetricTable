@@ -1,4 +1,4 @@
-package ru.vsokolova.volumetric_table.di.density
+package ru.vsokolova.volumetric_table.di
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
@@ -6,13 +6,10 @@ import androidx.room.Room
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap
-import ru.vsokolova.volumetric_table.db.density.DensityDao
-import ru.vsokolova.volumetric_table.db.density.DensityDatabase
-import ru.vsokolova.volumetric_table.db.density.DensityRepository
-import ru.vsokolova.volumetric_table.di.ViewModelFactory
-import ru.vsokolova.volumetric_table.di.ViewModelKey
-import ru.vsokolova.volumetric_table.ui.density.DensityViewModel
-import javax.inject.Provider
+import ru.vsokolova.volumetric_table.db.DensityDao
+import ru.vsokolova.volumetric_table.db.DensityDatabase
+import ru.vsokolova.volumetric_table.db.DensityRepository
+import ru.vsokolova.volumetric_table.ui.DensityViewModel
 import javax.inject.Singleton
 
 @Module
@@ -23,12 +20,6 @@ class DensityDataModule {
     @ViewModelKey(DensityViewModel::class)
     fun provideViewModel(densityRepository: DensityRepository): ViewModel {
         return DensityViewModel(densityRepository)
-    }
-
-    @Singleton
-    @Provides
-    fun provideViewModelFactory(creators: Map<Class<out ViewModel>, @JvmSuppressWildcards Provider<ViewModel>>): ViewModelFactory {
-        return ViewModelFactory(creators)
     }
 
     @Provides
