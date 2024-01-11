@@ -61,6 +61,8 @@ dependencies {
     //testing
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation("androidx.test.uiautomator:uiautomator:2.2.0")
 
     implementation(project(":core"))
     implementation(project(":feature_gost"))

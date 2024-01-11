@@ -14,17 +14,17 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-//import ru.vsokolova.volumetric_table.ui.MainActivity
+import ru.vsokolova.volumetric_table.ui.MainActivity
 
 @RunWith(AndroidJUnit4::class)
 class DensityFragmentTest {
 
-//    @get:Rule val activityRule = ActivityScenarioRule(MainActivity::class.java)
+    @get:Rule val activityRule = ActivityScenarioRule(MainActivity::class.java)
     @get:Rule val disableAnimationRule = DisableAnimationsRule()
 
     @Before
     fun setUp() {
-        onView(withText("Плотность")).perform(click())
+        onView(withId(R.id.navigation_density)).perform(click())
     }
 
     @Test
